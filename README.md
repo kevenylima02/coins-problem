@@ -1,17 +1,17 @@
 # coins-problem
-
+```ts
 const  coins = [50, 20, 10, 5, 2, 1, 0.5]
 function getCurrentCount(amount:number){
     let rest = amount
     let i = 0
     let change = []
-    while(rest !== 0){
+    while(rest > 0){
         if(rest < coins[i]) {
             i++
             continue
         }
         const repeat = Math.floor(rest / coins[i])
-        rest = amount % coins[i]
+        rest = rest % coins[i]
         if(repeat > 0){
             change.push({
                 coin: coins[i],
@@ -27,4 +27,5 @@ function getCurrentCount(amount:number){
 
     return { numberOfCoin, details: change }
 }
-console.log(getCurrentCount(37.5))
+console.log(getCurrentCount(57))
+```
